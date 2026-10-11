@@ -13,3 +13,5 @@
 .ratings button.selected.na{background:#64798a;color:white}
 @media(max-width:1000px){.ratings button{min-height:50px;font-size:16px}.item{padding:16px 0}}
 @media print{.download-pdf{display:none!important}}
+
+.nextpm-box{background:#eef4fa;border:1px solid #cbd9e6;border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:5px}.nextpm-box #nextPmPreview{font-size:1.25rem;font-weight:800;color:#173c60}.nextpm-box small{color:#526679}

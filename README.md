@@ -9,7 +9,7 @@ Fresh Node.js website with no external npm dependencies and no login.
 Deploy this folder/repository as a Node.js service (start command `npm start`). Add a Railway Volume mounted at `/app/data` and set environment variable `DATA_DIR=/app/data`. Records are stored in `records.json` on the volume. Set up periodic external backups using the Dashboard's Export Backup button. A Railway volume is persistent storage, not a managed database or automatic backup.
 
 ## Features
-- Dashboard for units 8300–8323, 5,000-mile PM schedule, 500-mile warning, estimated next PM date based on weekly mileage.
+- Dashboard for units 8300–8323, 5,000-mile PM schedule, 500-mile warning, next PM due mileage based on last completed scheduled PM + 5,000 miles.
 - Tablet-friendly step-by-step inspection with autosaved local draft, per-item ratings and comments.
 - Tire PSI and tread depth (32nds) for four positions plus spare.
 - Separate service actions and full scheduled PM flag; only a full scheduled PM resets next PM interval.
