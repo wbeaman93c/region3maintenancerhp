@@ -1,25 +1,22 @@
-# Region 3 Fleet Maintenance — New Build
+# Region 3 PM Website — New iPad-friendly build
 
-This is a new, independent website. No login is included.
+Fresh Node.js website with no external npm dependencies and no login.
 
 ## Start locally
-Requires Node.js 18 or newer. Run `npm start`, then visit `http://localhost:3000`.
+`npm start` then open http://localhost:3000
 
-## Deploy to Railway
-1. Create a NEW GitHub repository and upload `server.js`, `package.json`, and the entire `public` folder.
-2. Create a new Railway service from the GitHub repository. Railway will run `npm start`.
-3. **Before entering real data**, attach a Railway persistent volume mounted at `/app/data` and set environment variable `DATA_DIR=/app/data`. Without persistent storage, saved reports can disappear when Railway redeploys.
-4. Generate a Railway domain and test the website. Point your custom domain to the service only when ready.
+## Railway
+Deploy this folder/repository as a Node.js service (start command `npm start`). Add a Railway Volume mounted at `/app/data` and set environment variable `DATA_DIR=/app/data`. Records are stored in `records.json` on the volume. Set up periodic external backups using the Dashboard's Export Backup button. A Railway volume is persistent storage, not a managed database or automatic backup.
 
-## What it does
-- Dashboard for units 8300–8323, due-soon PM (within 500 miles), overdue PM and out-of-service units.
-- Fleet Maintenance: comprehensive basic PM inspection, work completed, deficiencies, notes, and disposition.
-- Maintenance Records: saved report history, filter by unit, view and print.
-- Completing **Full scheduled PM completed** resets the next PM to current mileage + 5,000 miles. A standalone oil change or tire rotation does NOT reset the full PM interval.
-- Optional estimated weekly mileage per truck gives a projected next PM date. The date is an estimate, not a guarantee.
-- Mileage and reports persist in a JSON data file on the server, provided DATA_DIR points to persistent storage.
+## Features
+- Dashboard for units 8300–8323, 5,000-mile PM schedule, 500-mile warning, estimated next PM date based on weekly mileage.
+- Tablet-friendly step-by-step inspection with autosaved local draft, per-item ratings and comments.
+- Tire PSI and tread depth (32nds) for four positions plus spare.
+- Separate service actions and full scheduled PM flag; only a full scheduled PM resets next PM interval.
+- Stored inspection records, printable details, JSON backup export.
 
-## Operational notes
-- No login means anyone with access to the website URL can view or submit records. Restrict network access if needed.
-- Records cannot be edited or deleted in the UI; this protects submitted history. Export/backup and admin tools can be added later.
-- This is a basic operational PM checklist, not a substitute for manufacturer-specific service requirements, qualified mechanical inspection, or applicable regulatory inspections.
+## Important
+- No authentication: anyone with the site URL can view, edit and submit reports. Restrict access at network/platform level if needed.
+- Browser draft autosave is device-local, while submitted reports are stored server-side.
+- Single-instance JSON storage is intended for a small team and should not be used with multiple Railway replicas. For multi-instance use, migrate to PostgreSQL.
+- This is an operational inspection form, not a substitute for OEM maintenance instructions, qualified mechanic judgment, or legally required inspections.
