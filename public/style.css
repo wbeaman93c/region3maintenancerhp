@@ -15,3 +15,6 @@
 @media print{.download-pdf{display:none!important}}
 
 .nextpm-box{background:#eef4fa;border:1px solid #cbd9e6;border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:5px}.nextpm-box #nextPmPreview{font-size:1.25rem;font-weight:800;color:#173c60}.nextpm-box small{color:#526679}
+
+/* Live mileage calculator, responsive on iPad */
+.pm-calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.pm-calc-grid>div{padding:12px;background:#f1f5f9;border-radius:9px;min-width:0}.pm-calc-grid small{display:block;color:#526579;font-size:12px;margin-bottom:6px}.pm-calc-grid strong{display:block;font-size:clamp(16px,2vw,22px);color:#16334d;overflow-wrap:anywhere}.pm-empty{color:#526579}@media(max-width:650px){.pm-calc-grid{grid-template-columns:1fr}.pm-calc-grid>div{padding:10px}}
