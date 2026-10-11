@@ -18,3 +18,6 @@
 
 /* Live mileage calculator, responsive on iPad */
 .pm-calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.pm-calc-grid>div{padding:12px;background:#f1f5f9;border-radius:9px;min-width:0}.pm-calc-grid small{display:block;color:#526579;font-size:12px;margin-bottom:6px}.pm-calc-grid strong{display:block;font-size:clamp(16px,2vw,22px);color:#16334d;overflow-wrap:anywhere}.pm-empty{color:#526579}@media(max-width:650px){.pm-calc-grid{grid-template-columns:1fr}.pm-calc-grid>div{padding:10px}}
+
+/* Maintenance Records — touch-friendly truck filtering and PDF actions */
+.records-count{font-weight:700;margin:0 0 16px;color:#34465a}.record-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pdf-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:8px;background:#163c63;color:white;text-decoration:none;font-weight:700;white-space:nowrap}.pdf-link:hover{background:#0c2d4d}.filter select{min-height:48px;min-width:165px}@media(max-width:700px){.record-actions{flex-direction:column;align-items:stretch}.record-actions button,.pdf-link{width:100%;text-align:center}}
