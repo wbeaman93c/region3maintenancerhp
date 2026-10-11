@@ -20,3 +20,6 @@ Deploy this folder/repository as a Node.js service (start command `npm start`). 
 - Browser draft autosave is device-local, while submitted reports are stored server-side.
 - Single-instance JSON storage is intended for a small team and should not be used with multiple Railway replicas. For multi-instance use, migrate to PostgreSQL.
 - This is an operational inspection form, not a substitute for OEM maintenance instructions, qualified mechanic judgment, or legally required inspections.
+
+
+THEME UPDATE: Tennessee Rural Service Patrol branding, provided official seal, one Keeping Tennessee Moving slogan in the header, redesigned responsive dashboard, original PM and records functionality retained. Dashboard values come from actual stored data; no mock mileage is seeded.
